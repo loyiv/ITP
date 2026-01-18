@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this code in your research, please cite our paper."
+title: "Imagine-then-Plan: Agent Learning from Adaptive Lookahead with World Models"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Youwei
+  - family-names: Wang
+    given-names: Jian
+  - family-names: Wang
+    given-names: Hanlin
+  - family-names: Guo
+    given-names: Beichen
+  - family-names: Li
+    given-names: Wenjie
+repository-code: "https://github.com/RELEASE-COMING-SOON/itp"
+url: "https://github.com/RELEASE-COMING-SOON/itp"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Imagine-then-Plan: Agent Learning from Adaptive Lookahead with World Models"
+  authors:
+    - family-names: Liu
+      given-names: Youwei
+    - family-names: Wang
+      given-names: Jian
+    - family-names: Wang
+      given-names: Hanlin
+    - family-names: Guo
+      given-names: Beichen
+    - family-names: Li
+      given-names: Wenjie
+  year: 2026
+  url: "https://arxiv.org/abs/2601.08955"
+  identifiers:
+    - type: other
+      value: "arXiv:2601.08955"
+
+
