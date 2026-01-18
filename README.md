@@ -11,9 +11,7 @@
 </div>
 
 
-<p align="center">
-  <img src="figures/highlight.png" width="50%" />
-</p>
+
 
 
 
@@ -31,7 +29,9 @@
 
 ## 💡 Overview
 
-This repository is a **public-release packaging** of the research code for **Imagine-then-Plan (ITP)**, proposed in *Agent Learning from Adaptive Lookahead with World Models* ([arXiv:2601.08955](https://arxiv.org/pdf/2601.08955)).
+<p align="center">
+  <img src="figures/highlight.png" width="50%" />
+</p>
 
 Modern LLM agents often behave **reactively**: they decide actions from the current observation and short history, which can be brittle for **long-horizon** tasks. ITP addresses this by introducing a learned **textual world model** and an **adaptive lookahead** mechanism, enabling the agent to **mentally rehearse** possible futures before committing actions in the real environment.
 
