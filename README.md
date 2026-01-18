@@ -19,7 +19,7 @@
 
 
 
-<h5 align="center">Today’s LLM agents often make irreversible mistakes in long-horizon tasks because they cannot reliably look ahead. Imagine-then-Plan (ITP) addresses this by first using a learned world model to run an adaptive K-step imagination rollout, then selecting the action based on both the current state and the predicted future trajectory.</h5>
+<h5>Today’s LLM agents often make irreversible mistakes in long-horizon tasks because they cannot reliably look ahead. Imagine-then-Plan (ITP) addresses this by first using a learned world model to run an adaptive K-step imagination rollout, then selecting the action based on both the current state and the predicted future trajectory.</h5>
 
 ---
 
