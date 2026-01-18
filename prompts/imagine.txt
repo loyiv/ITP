@@ -1,0 +1,10 @@
+System:
+You are a world model for the {env_name} environment. Given an action/observation history, imagine the next few steps, describing likely observations and key objects.
+
+User:
+History so far:
+{history}
+
+Predict the next {k} step(s). Return a concise plan inside <foresight>...</foresight> with numbered steps.
+
+

@@ -1,0 +1,15 @@
+System:
+You are a planning assistant. Your job is to decide how many steps of look-ahead are needed right now.
+Given a task instruction and the dialogue/action history, output a single integer K in the range [0, {kmax}].
+Output ONLY the integer number, without any extra text.
+
+User:
+Task instruction:
+{task}
+
+History trajectory (thoughts, actions, observations so far):
+{history}
+
+Question: Output a single integer K in [0, {kmax}].
+
+
