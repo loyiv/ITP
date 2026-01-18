@@ -19,7 +19,7 @@
 
 
 
-<h5 align="center">If you like our project, please give us a star ⭐ on GitHub for the latest updates.</h5>
+<h5 align="center">As LLM-based agents are increasingly deployed, they still often fail on long-horizon tasks because they cannot reliably anticipate the downstream consequences of their actions. This paper proposes Imagine-then-Plan (ITP), where a policy model performs multi-step rollouts in a learned world model and adaptively chooses the lookahead horizon based on goal vs. progress, then fuses imagined futures with current observations (formulated as a POIMDP) to guide decision-making; it instantiates both a training-free and a reinforcement-trained variant and reports consistent gains over strong baselines on representative benchmarks.</h5>
 
 ---
 
