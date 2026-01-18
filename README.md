@@ -31,13 +31,13 @@ ITP equips an agent policy with a world model to generate **K-step foresight** (
 ### 🧭 From Reason-then-Act to Imagine-then-Plan
 
 <p align="center">
-  <img src="figures/itp_paradigms.png" width="100%" />
+  <img src="figures/highlight.png" width="100%" />
 </p>
 
 ### 🧩 Training & Usage Overview (World Model → ITP\_I / ITP\_R)
 
 <p align="center">
-  <img src="figures/itp_pipeline.png" width="100%" />
+  <img src="figures/workflow.png" width="100%" />
 </p>
 
 > Note: Place the two figures at `figures/itp_paradigms.png` and `figures/itp_pipeline.png` (names are adjustable; update paths accordingly).
