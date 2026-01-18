@@ -9,10 +9,9 @@
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 
 </div>
-### 🧭 From Reason-then-Act to Imagine-then-Plan
 
 <p align="center">
-  <img src="figures/highlight.png" width="100%" />
+  <img src="figures/highlight.png" width="50%" />
 </p>
 
 <h5 align="center">If you like our project, please give us a star ⭐ on GitHub for the latest updates.</h5>
