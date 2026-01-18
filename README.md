@@ -9,6 +9,11 @@
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 
 </div>
+### 🧭 From Reason-then-Act to Imagine-then-Plan
+
+<p align="center">
+  <img src="figures/highlight.png" width="100%" />
+</p>
 
 <h5 align="center">If you like our project, please give us a star ⭐ on GitHub for the latest updates.</h5>
 
@@ -28,11 +33,6 @@ This repository is a **public-release packaging** of the research code for **Ima
 
 ITP equips an agent policy with a world model to generate **K-step foresight** (with an adaptive horizon \(K \in [0, K_{\max}]\)), enabling a principled trade-off between **planning depth** and **compute cost**.
 
-### 🧭 From Reason-then-Act to Imagine-then-Plan
-
-<p align="center">
-  <img src="figures/highlight.png" width="100%" />
-</p>
 
 ### 🧩 Training & Usage Overview (World Model → ITP\_I / ITP\_R)
 
