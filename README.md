@@ -20,9 +20,8 @@
 ---
 
 ## 📣 Latest News
-
-- **[Jan 18, 2026]**: 🚀 Code release (release-oriented packaging, prompts, and core modules).
 - **[Jan 15, 2026]**: 📄 Paper released on **arXiv** and **Hugging Face Papers**.
+- **[Jan 18, 2026]**: 🚀 Code release (release-oriented packaging, prompts, and core modules).
 - **[Coming Soon]**:
   - [ ] 📦 Processed data release
   - [ ] 🧊 Training checkpoints release (World Model / ITP_R)
