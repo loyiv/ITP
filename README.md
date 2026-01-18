@@ -1,5 +1,7 @@
 <h1 align="center">🧠 Imagine-then-Plan (ITP): Agent Learning from Adaptive Lookahead with World Models</h1>
-
+<p align="center">
+  <img src="figures/highlight.png" width="50%" />
+</p>
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv-b5212f.svg?logo=arxiv)](https://arxiv.org/pdf/2601.08955)
@@ -32,7 +34,7 @@
 ## 💡 Overview
 
 <p align="center">
-  <img src="figures/highlight.png" width="50%" />
+  <img src="figures/workflow.png" width="100%" />
 </p>
 
 Modern LLM agents often behave **reactively**: they decide actions from the current observation and short history, which can be brittle for **long-horizon** tasks. ITP addresses this by introducing a learned **textual world model** and an **adaptive lookahead** mechanism, enabling the agent to **mentally rehearse** possible futures before committing actions in the real environment.
@@ -63,11 +65,6 @@ ITP_R learns *when* and *how long* to imagine by adding a lightweight **K-head p
 2) **Warm-up training**: jointly train the action policy (imitation) and the K-head (classification/regression).  
 3) **Online A2C optimization**: optimize the action policy + K-head + value head online with actor–critic training while the world model is frozen.
 
-### 🧩 Method Overview
-
-<p align="center">
-  <img src="figures/workflow.png" width="100%" />
-</p>
 
 ---
 
@@ -114,8 +111,12 @@ pip install -e .
 
 ## Experimental Results
 
+<p align="center">
+  <img src="figures/main_table.png" width="90%" />
+</p>
 
-
+Evaluation of task success rates(%) across ALFWorld and ScienceWorld benchmarks. Bold and underlined
+values represent the best and second-best performance within each backbone model group,respectively.
 
 ## 📞 Contact
 
