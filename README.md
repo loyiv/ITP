@@ -39,8 +39,6 @@ ITP equips an agent policy with a world model to generate **K-step foresight** (
   <img src="figures/workflow.png" width="100%" />
 </p>
 
-> Note: Place the two figures at `figures/itp_paradigms.png` and `figures/itp_pipeline.png` (names are adjustable; update paths accordingly).
-
 ---
 
 ## ✨ Key Features
