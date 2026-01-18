@@ -33,6 +33,44 @@
 ---
 
 
+## 📝 Contents
+
+- [Setup](#setup)
+- [Usage](#usage)
+  - [World Model Training](#world-model-training)
+  - [ITP_R Training](#itp-r-training)
+  - [Evaluation](#evaluation)
+- [Experimental Results](#experimental-results)
+- [Contact](#contact)
+- [Citation](#citation)
+
+<!-- ========== Anchors (place these RIGHT ABOVE the corresponding headings) ========== -->
+
+<a id="setup"></a>
+<!-- Put this line right above: ## 🔧 Installation -->
+
+<a id="usage"></a>
+<!-- Put this line right above: ## Usage -->
+
+<a id="world-model-training"></a>
+<!-- Put this line right above: ### 🧠 World Model Training（FastChat SFT, Sec. 3.1） -->
+
+<a id="itp-r-training"></a>
+<!-- Put this line right above: ### 🎛️ ITP_R Training（Adaptive Lookahead, Sec. 3.3） -->
+
+<a id="evaluation"></a>
+<!-- Put this line right above: ### 🧪 Evaluation -->
+
+<a id="experimental-results"></a>
+<!-- Put this line right above: ## Experimental Results -->
+
+<a id="contact"></a>
+<!-- Put this line right above: ## 📞 Contact -->
+
+<a id="citation"></a>
+<!-- Put this line right above: ## 📄 Citation -->
+
+
 ## 💡 Overview
 
 <p align="center">
