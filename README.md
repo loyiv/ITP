@@ -61,7 +61,7 @@ ITP_R learns *when* and *how long* to imagine by adding a lightweight **K-head p
 2) **Warm-up training**: jointly train the action policy (imitation) and the K-head (classification/regression).  
 3) **Online A2C optimization**: optimize the action policy + K-head + value head online with actor–critic training while the world model is frozen.
 
-### 🧩 Training & Usage Overview (World Model → ITP_I / ITP_R)
+### 🧩 Method Overview
 
 <p align="center">
   <img src="figures/workflow.png" width="100%" />
@@ -228,7 +228,7 @@ For a more detailed, file-level alignment table, see `docs/paper_to_code.md`.
 
 ## 📄 Citation
 
-If you find this work helpful, please cite our paper (see `CITATION.cff`). BibTeX:
+If you find this work helpful, please cite our paper:
 
 ```bibtex
 @article{liu2026itp,
