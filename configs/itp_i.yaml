@@ -1,0 +1,27 @@
+
+env:
+  name: "ALFWorld"
+
+policy:
+  backend: "local"
+  model_name_or_path: "path/to/policy_model"
+  device: "cuda"
+  torch_dtype: "bf16"
+  decision_tokens: 32
+  act_tokens: 256
+
+world_model:
+  backend: "local"
+  model_name_or_path: "path/to/world_model"
+  device: "cuda"
+  torch_dtype: "bf16"
+  foresight_tokens: 256
+  api_key_env: "DEEPSEEK_API_KEY"
+  api_base_url: "https://api.deepseek.com"
+  api_timeout_s: 120
+  api_max_retries: 3
+
+planning:
+  max_k: 5
+
+

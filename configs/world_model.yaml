@@ -1,0 +1,16 @@
+
+model:
+  base_model_name_or_path: "path/to/base_lm"
+  torch_dtype: "fp16"
+
+data:
+  train_jsonl: "path/to/wm_train.jsonl"
+  max_len: 2048
+
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  merge_lora: true
+
+

@@ -1,0 +1,26 @@
+
+training:
+  kmax: 5
+  gamma: 0.99
+  rl_learning_rate: 5e-6
+
+reward_shaping:
+  lambda_k: 0.2
+  step_cost: 0.01
+  success_bonus: 0.01
+  invalid_action_penalty: -0.1
+
+loss:
+  value_coef: 1.0
+  entropy_coef: 0.01
+  max_grad_norm: 1.0
+
+decoding:
+  do_sample: true
+  temperature: 0.7
+  top_p: 0.9
+  action_max_new_tokens: 16
+  imagine_action_max_new_tokens: 12
+  wm_max_new_tokens: 192
+
+

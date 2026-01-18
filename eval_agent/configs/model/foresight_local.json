@@ -1,0 +1,13 @@
+{
+  "agent_class": "ForesightLocalAgent",
+  "config": {
+    "policy_model_path": "checkpoints/policy_model",
+    "wm_model_path": "checkpoints/world_model",
+    "policy_device": "cuda:0",
+    "world_device": "cuda:0",
+    "keep_last_messages": 8,
+    "fixed_k": null
+  }
+}
+
+
