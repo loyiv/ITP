@@ -2,27 +2,20 @@
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-b5212f.svg?logo=arxiv)](https://arxiv.org/pdf/2601.08955)
+[![Paper](https://img.shields.io/badge/Paper-arXIv-b5212f.svg?logo=arxiv)](https://arxiv.org/pdf/2601.08955)
 [![Paper](https://img.shields.io/badge/Paper-Hugging%20Face-yellow?logo=huggingface)](https://huggingface.co/papers/2601.08955)
-[![Code](https://img.shields.io/badge/Code-Release%202026.01.18-blue?logo=github)](#-latest-news)
 [![License](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-
 
 <p align="center">
   <img src="figures/highlight.png" width="50%" />
 </p>
 </div>
 
-
-
-
-
-
 <h5>Today’s LLM agents often make irreversible mistakes in long-horizon tasks because they cannot reliably look ahead. Imagine-then-Plan (ITP) addresses this by first using a learned world model to run an adaptive K-step imagination rollout, then selecting the action based on both the current state and the predicted future trajectory.</h5>
 
 ---
 
+<a id="latest-news"></a>
 ## 📣 Latest News
 - **[Jan 15, 2026]**: 📄 Paper released on **arXiv** and **Hugging Face Papers**.
 - **[Jan 18, 2026]**: 🚀 Code release (release-oriented packaging, prompts, and core modules).
@@ -32,9 +25,22 @@
 
 ---
 
+<a id="contents"></a>
+## 🧭 Contents
+- [💡 Overview](#overview)
+- [🔧 Installation](#installation)
+- [▶️ Usage](#usage)
+  - [🧠 World Model Training](#world-model-training)
+  - [🎛️ ITP_R Training](#itp-r-training)
+  - [🧪 Evaluation](#evaluation)
+- [📊 Experimental Results](#experimental-results)
+- [📞 Contact](#contact)
+- [📄 Citation](#citation)
+- [📜 License](#license)
 
+---
 
-
+<a id="overview"></a>
 ## 💡 Overview
 
 <p align="center">
@@ -69,48 +75,9 @@ ITP_R learns *when* and *how long* to imagine by adding a lightweight **K-head p
 2) **Warm-up training**: jointly train the action policy (imitation) and the K-head (classification/regression).  
 3) **Online A2C optimization**: optimize the action policy + K-head + value head online with actor–critic training while the world model is frozen.
 
-
 ---
 
-
-
-## 📝 Contents
-
-- [Installation](#Installation)
-- [Usage](#usage)
-  - [World Model Training](#world-model-training)
-  - [ITP_R Training](#itp-r-training)
-  - [Evaluation](#evaluation)
-- [Experimental Results](#experimental-results)
-- [Contact](#contact)
-- [Citation](#citation)
-
-<!-- ========== Anchors (place these RIGHT ABOVE the corresponding headings) ========== -->
-
-<a id="setup"></a>
-<!-- Put this line right above: ## 🔧 Installation -->
-
-<a id="usage"></a>
-<!-- Put this line right above: ## Usage -->
-
-<a id="world-model-training"></a>
-<!-- Put this line right above: ### 🧠 World Model Training（FastChat SFT, Sec. 3.1） -->
-
-<a id="itp-r-training"></a>
-<!-- Put this line right above: ### 🎛️ ITP_R Training（Adaptive Lookahead, Sec. 3.3） -->
-
-<a id="evaluation"></a>
-<!-- Put this line right above: ### 🧪 Evaluation -->
-
-<a id="experimental-results"></a>
-<!-- Put this line right above: ## Experimental Results -->
-
-<a id="contact"></a>
-<!-- Put this line right above: ## 📞 Contact -->
-
-<a id="citation"></a>
-<!-- Put this line right above: ## 📄 Citation -->
-
+<a id="installation"></a>
 ## 🔧 Installation
 
 This section installs dependencies and then gives a **repository tour** so you can quickly locate:
@@ -148,10 +115,10 @@ pip install -e .
 
 ---
 
+<a id="usage"></a>
+## ▶️ Usage
 
-## Usage
-
-
+<a id="world-model-training"></a>
 ### 🧠 World Model Training
 
 ~~~bash
@@ -173,8 +140,8 @@ ${OUTPUT_DIR}/merged_full
 
 ---
 
+<a id="itp-r-training"></a>
 ### 🎛️ ITP_R Training
-
 
 #### 1) Stage-I：Pseudo-K Labeling
 
@@ -256,6 +223,7 @@ python -u -m itp.training.train_adaptive_k rl_k \
 
 ---
 
+<a id="evaluation"></a>
 ### 🧪 Evaluation
 
 #### 1) ALFWorld（ITP_I / RAP）
@@ -287,7 +255,6 @@ python -u -m foresight_eval \
   --heuristic_fallback 1
 ~~~
 
-
 #### 2) ScienceWorld（ITP_I）
 
 ~~~bash
@@ -313,20 +280,28 @@ python -u -m foresight_eval.runner_sciworld \
   --fixed_k -1
 ~~~
 
+---
 
-## Experimental Results
+<a id="experimental-results"></a>
+## 📊 Experimental Results
 
 <p align="center">
   <img src="figures/main_table.png" width="90%" />
 </p>
 
-Evaluation of task success rates(%) across ALFWorld and ScienceWorld benchmarks. Bold and underlined
-values represent the best and second-best performance within each backbone model group,respectively.
+Evaluation of task success rates (%) across ALFWorld and ScienceWorld benchmarks. Bold and underlined
+values represent the best and second-best performance within each backbone model group, respectively.
 
+---
+
+<a id="contact"></a>
 ## 📞 Contact
 
-For any questions, please reach out to us at [loyiv5477@gmail.com](loyiv5477@gmail.com).
+For any questions, please reach out to us at [loyiv5477@gmail.com](mailto:loyiv5477@gmail.com).
 
+---
+
+<a id="citation"></a>
 ## 📄 Citation
 
 If you find this work helpful, please cite our paper:
