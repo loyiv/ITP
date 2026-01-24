@@ -36,7 +36,7 @@ Currently, LLM agents often make irreversible mistakes in long-horizon tasks bec
   - [🎛️ ITP-R Training](#itp-r-training)
   - [🧪 Evaluation](#evaluation)
 - [📊 Experimental Results](#experimental-results)
-- [📞 Contact](#contact)
+- [📨 Contact](#contact)
 - [📄 Citation](#citation)
 
 ---
@@ -48,7 +48,7 @@ Currently, LLM agents often make irreversible mistakes in long-horizon tasks bec
   <img src="figures/workflow.png" width="100%" />
 </p>
 
-Modern LLM agents often behave **reactively**: they decide actions from the current observation and short history, which can be brittle for **long-horizon** tasks. ITP addresses this by introducing a learned **textual world model** and an **adaptive lookahead** mechanism, enabling the agent to **mentally rehearse** possible futures before committing actions in the real environment.
+Modern LLM agents often behave reactively: they decide actions from the current observation and short history, which can be brittle for **long-horizon** tasks. ITP addresses this by introducing a learned textual **world model** and an **adaptive lookahead** mechanism, enabling the agent to "mentally rehearse" possible futures before committing actions in the real environment.
 
 ### 🧠 POIMDP-Style Reasoning with Imagination
 
@@ -78,15 +78,7 @@ ITP-R learns *when* and *how long* to imagine by adding a lightweight **K-head p
 <a id="installation"></a>
 ## 🔧 Installation
 
-This section installs dependencies and then gives a **repository tour** so you can quickly locate:
-- ITP-I (inference-time): select *K* → imagine → reflect-and-act
-- ITP-R (reinforcement-trained): pseudo-label → warm-up → online A2C (policy + *K*-head + value head)
-- World Model training + rollout interface
-- Prompt templates used by the above modules
-
----
-
-### 🐍 1) Environment Setup (Recommended)
+### 1) Environment Setup (Recommended)
 
 We recommend **conda** with **Python 3.9+**.
 
@@ -101,7 +93,7 @@ python -m pip install --upgrade pip setuptools wheel
 
 ---
 
-### 📦 2) Install Python Packages
+### 2) Install Python Packages
 
 ~~~bash
 # From the repository root
@@ -282,13 +274,11 @@ python -u -m foresight_eval.runner_sciworld \
 
 <a id="experimental-results"></a>
 ## 📊 Experimental Results
+Below are the task success rates (%) across ALFWorld and ScienceWorld benchmarks. Bold and underlined values represent the best and second-best performance within each backbone model group, respectively.
 
 <p align="center">
   <img src="figures/main_table.png" width="90%" />
 </p>
-
-Evaluation of task success rates (%) across ALFWorld and ScienceWorld benchmarks. Bold and underlined
-values represent the best and second-best performance within each backbone model group, respectively.
 
 ---
 
