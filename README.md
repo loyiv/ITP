@@ -6,37 +6,38 @@
 [![Paper](https://img.shields.io/badge/Paper-Hugging%20Face-yellow?logo=huggingface)](https://huggingface.co/papers/2601.08955)
 [![License](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE)
 
+<a href="https://github.com/loyiv">Youwei Liu</a>, <a href="https://iwangjian.github.io/">Jian Wang†</a>, <a href="https://wanghanlinhenry.github.io/">Hanlin Wang</a>, <a href="https://technicolorguo.github.io/">Beichen Guo</a>, <a href="https://www4.comp.polyu.edu.hk/~cswjli/">Wenjie Li</a>
+
 <p align="center">
   <img src="figures/highlight.png" width="50%" />
 </p>
 </div>
 
-<h5>Today’s LLM agents often make irreversible mistakes in long-horizon tasks because they cannot reliably look ahead. Imagine-then-Plan (ITP) addresses this by first using a learned world model to run an adaptive K-step imagination rollout, then selecting the action based on both the current state and the predicted future trajectory.</h5>
+Currently, LLM agents often make irreversible mistakes in long-horizon tasks because they cannot reliably look ahead. **Imagine-then-Plan** (**ITP**) addresses this by first using a learned world model to run an adaptive *K*-step imagination rollout, then selecting the action based on both the current state and the predicted future trajectory. This formulates the policy reasoning process as a Partially Observable and Imaginable Markov Decision Process (**POIMDP**).
 
 ---
 
 <a id="latest-news"></a>
 ## 📣 Latest News
-- **[Jan 15, 2026]**: 📄 Paper released on **arXiv** and **Hugging Face Papers**.
-- **[Jan 18, 2026]**: 🚀 Code release (release-oriented packaging, prompts, and core modules).
-- **[Coming Soon]**:
+- **[Coming Soon]**
   - [ ] 📦 Processed data release
-  - [ ] 🧊 Training checkpoints release (World Model / ITP_R)
+  - [ ] 🧊 Training checkpoints release (World Model / ITP-R)
+- **[Jan 18, 2026]** 🚀 Code release (environment setup, prompts, and core modules).
+- **[Jan 15, 2026]** 📄 Paper released on <a href="https://arxiv.org/abs/2601.08955">arXiv</a> and <a href="https://huggingface.co/papers/2601.08955">Hugging Face</a>.
 
 ---
 
-<a id="contents"></a>
-## 🧭 Contents
+<a id="content"></a>
+## 🧭 Content
 - [💡 Overview](#overview)
 - [🔧 Installation](#installation)
 - [▶️ Usage](#usage)
   - [🧠 World Model Training](#world-model-training)
-  - [🎛️ ITP_R Training](#itp-r-training)
+  - [🎛️ ITP-R Training](#itp-r-training)
   - [🧪 Evaluation](#evaluation)
 - [📊 Experimental Results](#experimental-results)
 - [📞 Contact](#contact)
 - [📄 Citation](#citation)
-- [📜 License](#license)
 
 ---
 
@@ -51,29 +52,26 @@ Modern LLM agents often behave **reactively**: they decide actions from the curr
 
 ### 🧠 POIMDP-Style Reasoning with Imagination
 
-ITP treats decision making as reasoning with both:
-- the current observable state (text observation), and
-- an imagined multi-step future trajectory produced by the world model.
+ITP treats decision making as reasoning with both the current observable state, and an imagined multi-step future trajectory produced by the world model.
+At each step, the agent can invoke the world model to simulate several steps ahead, then use that foresight to reflect on the progress, risks, and constraints, and finally output the action.
 
-At each step, the agent can invoke the world model to simulate several steps ahead (a “mental sandbox”), then use that foresight to refine the final action choice.
+### 🧩 Two Instantiations: ITP-I and ITP-R
 
-### 🧩 Two Instantiations: ITP_I and ITP_R
+#### 🔍 ITP-I (In-Imagination Learning, Training-free)
 
-#### 🔍 ITP_I (Training-free, In-Imagination Learning)
+ITP-I enhances an LLM agent *at inference time* without parameter updates. The agent follows a three-stage **Imagine-then-Plan** procedure at each step:
 
-ITP_I enhances an LLM agent *at inference time* without parameter updates. The agent follows a three-stage **Imagine-then-Plan** procedure at each step:
-
-1) **Adaptive horizon selection**: decide how many steps to look ahead (K) based on the task and current situation.  
-2) **World-model imagination**: roll out K steps to obtain a foresight trajectory.  
+1) **Adaptive horizon selection**: decide how many steps to look ahead (*K*) based on the task and current situation.  
+2) **World-model imagination**: roll out *K* steps to obtain a foresight trajectory.  
 3) **Reflect-then-act**: reflect on the foresight (progress, risks, constraints) and then output the real action.
 
-#### 🧪 ITP_R (Reinforcement-trained, Adaptive Lookahead Learning)
+#### 🧪 ITP-R (Reinforcement-trained, Adaptive Lookahead Learning)
 
-ITP_R learns *when* and *how long* to imagine by adding a lightweight **K-head predictor** on top of the backbone LLM and training it with a three-stage pipeline:
+ITP-R learns *when* and *how long* to imagine by adding a lightweight **K-head predictor** on top of the backbone LLM and training it with a three-stage pipeline:
 
-1) **Pseudo-labeling horizons**: derive training targets for K by selecting the most helpful lookahead depth under a cost trade-off.  
-2) **Warm-up training**: jointly train the action policy (imitation) and the K-head (classification/regression).  
-3) **Online A2C optimization**: optimize the action policy + K-head + value head online with actor–critic training while the world model is frozen.
+1) **Pseudo-labeling horizons**: derive training targets for *K* by selecting the most helpful lookahead depth under a cost trade-off.  
+2) **Warm-up training**: jointly train the action policy (imitation) and the *K*-head predictor.  
+3) **Online A2C optimization**: optimize the action policy + *K*-head predictor + value head online with actor–critic training while the world model is frozen.
 
 ---
 
@@ -81,8 +79,8 @@ ITP_R learns *when* and *how long* to imagine by adding a lightweight **K-head p
 ## 🔧 Installation
 
 This section installs dependencies and then gives a **repository tour** so you can quickly locate:
-- ITP_I (inference-time): select K → imagine → reflect-and-act
-- ITP_R (reinforcement-trained): pseudo-label → warm-up → online A2C (policy + K-head + value head)
+- ITP-I (inference-time): select *K* → imagine → reflect-and-act
+- ITP-R (reinforcement-trained): pseudo-label → warm-up → online A2C (policy + *K*-head + value head)
 - World Model training + rollout interface
 - Prompt templates used by the above modules
 
@@ -141,9 +139,9 @@ ${OUTPUT_DIR}/merged_full
 ---
 
 <a id="itp-r-training"></a>
-### 🎛️ ITP_R Training
+### 🎛️ ITP-R Training
 
-#### 1) Stage-I：Pseudo-K Labeling
+#### 1) Stage-I：Pseudo-*K* Labeling
 
 ~~~bash
 python -u -m itp.training.train_adaptive_k label \
@@ -160,7 +158,7 @@ python -u -m itp.training.train_adaptive_k label \
   --logprob_norm sum
 ~~~
 
-#### 2) Stage-II：Warm-up SFT（k-head supervised）
+#### 2) Stage-II：Warm-up SFT
 
 ~~~bash
 python -u -m itp.training.train_adaptive_k sft \
@@ -180,7 +178,7 @@ python -u -m itp.training.train_adaptive_k sft \
   --padding_side left
 ~~~
 
-#### 3) Stage-III：Online A2C（rl_k）
+#### 3) Stage-III：Online A2C Optimization
 
 ~~~bash
 conda activate <ENV_WITH_ALFWORLD>
@@ -226,7 +224,7 @@ python -u -m itp.training.train_adaptive_k rl_k \
 <a id="evaluation"></a>
 ### 🧪 Evaluation
 
-#### 1) ALFWorld（ITP_I / RAP）
+#### 1) ALFWorld（ITP-I / RAP）
 
 ~~~bash
 export POLICY_MODEL="path/to/policy_checkpoint"
@@ -255,7 +253,7 @@ python -u -m foresight_eval \
   --heuristic_fallback 1
 ~~~
 
-#### 2) ScienceWorld（ITP_I）
+#### 2) ScienceWorld（ITP-I）
 
 ~~~bash
 export SCIENCEWORLD_JAR="path/to/scienceworld.jar"
@@ -295,7 +293,7 @@ values represent the best and second-best performance within each backbone model
 ---
 
 <a id="contact"></a>
-## 📞 Contact
+## 📨 Contact
 
 For any questions, please reach out to us at [loyiv5477@gmail.com](mailto:loyiv5477@gmail.com).
 
@@ -304,12 +302,12 @@ For any questions, please reach out to us at [loyiv5477@gmail.com](mailto:loyiv5
 <a id="citation"></a>
 ## 📄 Citation
 
-If you find this work helpful, please cite our paper:
+If you find this work helpful, please consider citing our paper as follows:
 
 ```bibtex
 @article{liu2026itp,
   title        = {Imagine-then-Plan: Agent Learning from Adaptive Lookahead with World Models},
-  author       = {Youwei Liu and Jian Wang and Hanlin Wang and Beichen Guo and Wenjie Li},
+  author       = {Liu, Youwei and Wang, Jian and Wang, Hanlin and Guo, Beichen and Li, Wenjie},
   journal      = {arXiv preprint arXiv:2601.08955},
   year         = {2026},
   url          = {https://arxiv.org/abs/2601.08955}
