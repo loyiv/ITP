@@ -274,8 +274,6 @@ python -u -m foresight_eval.runner_sciworld \
 
 <a id="experimental-results"></a>
 ## 📊 Experimental Results
-Below are the task success rates (%) across ALFWorld and ScienceWorld benchmarks. Bold and underlined values represent the best and second-best performance within each backbone model group, respectively.
-
 <p align="center">
   <img src="figures/main_table.png" width="90%" />
 </p>
