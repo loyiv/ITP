@@ -158,15 +158,16 @@ python -u -m itp.training.train_adaptive_k sft \
   --policy_model_path "path/to/policy_base_or_sft" \
   --out_dir "outputs/itp_r/policy_sft_khead" \
   --kmax 5 \
-  --epochs 1 \
-  --batch_size 2 \
-  --grad_accum 8 \
+  --epochs 3 \
+  --batch_size 1 \
+  --grad_accum 16 \
   --lr 2e-5 \
   --wd 0.0 \
-  --beta_k 1.0 \
+  --beta_k 0.5 \
+  --warmup_ratio 0.03 \
+  --lr_scheduler_type cosine \
   --max_seq_len 1536 \
-  --bf16 \
-  --train_only_heads \
+  --fp16 \
   --padding_side left
 ~~~
 
@@ -194,21 +195,21 @@ python -u -m itp.training.train_adaptive_k rl_k \
   --lr 5e-6 \
   --wd 0.0 \
   --lambda_k 0.2 \
-  --step_cost 0.0 \
-  --success_bonus 0.0 \
+  --step_cost 0.01 \
+  --success_bonus 0.01 \
   --invalid_action_penalty -0.1 \
   --entropy_coef 0.01 \
   --value_coef 1.0 \
   --max_grad_norm 1.0 \
   --action_max_new_tokens 16 \
   --action_do_sample 1 \
+  --action_temperature 0.7 \
   --imagine_action_max_new_tokens 12 \
   --max_seq_len 1536 \
   --history_keep_steps 6 \
   --padding_side left \
   --logprob_norm sum \
-  --bf16 \
-  --train_only_heads
+  --fp16
 ~~~
 
 ---
@@ -239,10 +240,7 @@ python -u -m foresight_eval \
   --use_history 0 \
   --decision_tokens 16 \
   --act_tokens 256 \
-  --foresight_tokens 256 \
-  --prefer_goal_action 1 \
-  --force_admissible_action 1 \
-  --heuristic_fallback 1
+  --foresight_tokens 256
 ~~~
 
 #### 2) ScienceWorld（ITP-I）
