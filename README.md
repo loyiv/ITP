@@ -6,7 +6,7 @@
 [![Paper](https://img.shields.io/badge/Paper-Hugging%20Face-yellow?logo=huggingface)](https://huggingface.co/papers/2601.08955)
 [![License](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE)
 
-<a href="https://github.com/loyiv">Youwei Liu</a>, <a href="https://iwangjian.github.io/">Jian Wang†</a>, <a href="https://wanghanlinhenry.github.io/">Hanlin Wang</a>, <a href="https://technicolorguo.github.io/">Beichen Guo</a>, <a href="https://www4.comp.polyu.edu.hk/~cswjli/">Wenjie Li</a>
+<a href="[https://github.com/loyiv](https://loyiv.github.io/)">Youwei Liu</a>, <a href="https://iwangjian.github.io/">Jian Wang†</a>, <a href="https://wanghanlinhenry.github.io/">Hanlin Wang</a>, <a href="https://technicolorguo.github.io/">Beichen Guo</a>, <a href="https://www4.comp.polyu.edu.hk/~cswjli/">Wenjie Li</a>
 
 <p align="center">
   <img src="figures/highlight.png" width="50%" />
