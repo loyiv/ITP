@@ -19,9 +19,6 @@ Currently, LLM agents often make irreversible mistakes in long-horizon tasks bec
 
 <a id="latest-news"></a>
 ## 📣 Latest News
-- **[Coming Soon]**
-  - [ ] 📦 Processed data release
-  - [ ] 🧊 Training checkpoints release (World Model / ITP-R)
 - **[Jan 18, 2026]** 🚀 Code release (environment setup, prompts, and core modules).
 - **[Jan 15, 2026]** 📄 Paper released on <a href="https://arxiv.org/abs/2601.08955">arXiv</a> and <a href="https://huggingface.co/papers/2601.08955">Hugging Face</a>.
 
