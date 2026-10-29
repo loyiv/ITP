@@ -288,10 +288,25 @@ For any questions, please reach out to us at [loyiv5477@gmail.com](mailto:loyiv5
 If you find this work helpful, please consider citing our paper as follows:
 
 ```bibtex
-@article{liu2026itp,
-  title        = {Imagine-then-Plan: Agent Learning from Adaptive Lookahead with World Models},
-  author       = {Liu, Youwei and Wang, Jian and Wang, Hanlin and Guo, Beichen and Li, Wenjie},
-  journal      = {arXiv preprint arXiv:2601.08955},
-  year         = {2026},
-  url          = {https://arxiv.org/abs/2601.08955}
+@inproceedings{liu-etal-2026-imagine,
+    title = "Imagine-then-Plan: Agent Learning from Adaptive Lookahead with World Models",
+    author = "Liu, Youwei  and
+      Wang, Jian  and
+      Wang, Hanlin  and
+      Guo, Beichen  and
+      Li, Wenjie",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.1198/",
+    pages = "27427--27445",
+    ISBN = "979-8-89176-459-0",
+    abstract = "Recent advances in world models have shown promise for modeling future dynamics of environmental states, enabling agents to reason and act without accessing real environments. Current methods mainly perform single-step or fixed-horizon rollouts, leaving their potential for complex task planning under-exploited. We propose Imagine-then-Plan (ITP), a unified framework for agent learning via lookahead imagination, where an agent{'}s policy model interacts with the learned world model, yielding multi-step ``imagined'' trajectories. Since the imagination horizon may vary by tasks and stages, we introduce a novel adaptive lookahead mechanism by trading off the ultimate goal and task progress. The resulting imagined trajectories provide rich signals about future consequences, such as achieved progress and potential conflicts, which are fused with current observations, formulating a partially \textit{observable} and \textit{imaginable} Markov decision process to guide policy learning. We instantiate ITP with both training-free and reinforcement-trained variants. Extensive experiments across representative agent benchmarks demonstrate that ITP significantly outperforms competitive baselines. Further analyses validate that our adaptive lookahead largely enhances agents' reasoning capability, providing valuable insights into addressing broader, complex tasks. Our code and data are publicly available at:https://github.com/loyiv/ITP."
 }
+
